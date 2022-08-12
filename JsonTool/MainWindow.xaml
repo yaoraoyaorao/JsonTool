@@ -1,0 +1,48 @@
+﻿<Window x:Class="JsonTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JsonTool"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600" MaxHeight="450" MaxWidth="600" ResizeMode="NoResize">
+    <Grid>
+        
+        <!--Json数据读取-->
+        <WrapPanel HorizontalAlignment="Center" Margin="0,20,0,0">
+            <Image Width="30" Height="30" Source="/json.png" Margin="0,0,10,0"/>
+            <TextBox Name="JsonPath" Text="./" Width="450" Height="30" FontSize="18" IsReadOnly="False" TextAlignment="Left"/>
+            <Button Width="30" Height="30" Click="JsonOpenFile" Margin="10,0,0,0"
+                    Background="Transparent" BorderBrush="Transparent">
+                <Image Width="30" Height="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Source="/OpenFolder.png"/>
+            </Button>
+        </WrapPanel>
+        
+        <!--C#数据读取-->
+        <WrapPanel HorizontalAlignment="Center" Margin="0,60,0,0">
+            <Image Width="30" Height="30" Source="/csharp.png" Margin="0,0,10,0"/>
+            <TextBox Name="CSPath" Text="./" Width="450" Height="30" FontSize="18" IsReadOnly="False" TextAlignment="Left"/>
+            <Button Width="30" Height="30" Click="CSOpenFile" Margin="10,0,0,0"
+                    Background="Transparent" BorderBrush="Transparent">
+                <Image Width="30" Height="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Source="/OpenFolder.png"/>
+            </Button>
+        </WrapPanel>
+
+        <WrapPanel HorizontalAlignment="Center" Margin="0,100,0,0" Orientation="Vertical">
+            <Button Content="加载" Click="LoadData" Width="50" HorizontalAlignment="Right" Margin="0,0,0,10"/>
+            <DataGrid Width="530" Height="250">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="类  型"></DataGridTextColumn>
+                    <DataGridTextColumn Header="字段名"></DataGridTextColumn>
+                    <DataGridTextColumn Header="  值  "></DataGridTextColumn>
+                    <DataGridTextColumn Header="默认值"></DataGridTextColumn>
+                    <DataGridTextColumn Header="备  注"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </WrapPanel>
+    </Grid>
+</Window>
